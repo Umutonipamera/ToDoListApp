@@ -1,6 +1,10 @@
-<a href="{% url 'tasks' % }"> Go Back </a>
+{% extends 'ToDoApp/main.html' %}
+{% block content %}
+
+<a href="{% url 'all_tasks' %}">Go Back</a>
 <form method="POST">
     {% csrf_token %}
     <P>Are you sure you want to delete this task? "{{task}}"</P>
     <input type="submit" value="Delete"/>
 </form>
+{% endblock content %}
